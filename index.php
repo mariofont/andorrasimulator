@@ -46,7 +46,7 @@
             <div class="box">
               <form action="results.php" method="POST">
                 <div class="field">
-                  <label class="label">Salario anual bruto</label>
+                  <label class="label">Ingresos anuales brutos</label>
                   <div class="control">
                     <input class="input" type="text" name="salary" placeholder="30.000 €">
                   </div>
@@ -54,9 +54,9 @@
                 </div>
 
                 <div class="field">
-                  <label class="label">Edad</label>
+                  <label class="label">¿Te gusta la web?</label>
                   <div class="control">
-                    <input class="input" type="text" name="age" placeholder="69">
+                    <input class="input" type="text" name="age" placeholder="Sí">
                   </div>
                   <p class="help">Abuelos no.</p>
                 </div>
