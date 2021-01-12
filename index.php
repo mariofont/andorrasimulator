@@ -25,22 +25,22 @@
     <section class="section has-text-centered">
       <div class="columns">
         <div class="column">
-          <h1 class="title is-spaced">
+          <h4 class="title is-4 is-spaced">
           🎯 El objetivo
-        </h1>
-        <p class="subtitle">Averiguar de forma <strong>rápida, sencilla y visual</strong> las diferencias fiscales entre España y Andorra.</p>
+          </h4>
+          <p class="subtitle">Averiguar de forma <strong>rápida, sencilla y visual</strong> las diferencias fiscales entre España y Andorra.</p>
         </div>
         <div class="column">
-          <h1 class="title is-spaced">
+          <h4 class="title is-4 is-spaced">
           📝 Datos necesarios
-        </h1>
-        <p class="subtitle">Sólamente es necesario el <strong>salario bruto anual</strong> para conocer los tramos correspondientes del IRFP.</p>
+          </h4>
+          <p class="subtitle">Sólamente es necesario el <strong>salario bruto anual</strong> para conocer los tramos correspondientes del IRFP.</p>
         </div>
         <div class="column">
-          <h1 class="title is-spaced">
+          <h4 class="title is-4 is-spaced">
           📊 Los resultados
-        </h1>
-        <p class="subtitle">El ahorro <strong>exacto</strong> de tributar en Andorra visualizado de forma gráfica y entretenida.</p>
+          </h4>
+          <p class="subtitle">El ahorro <strong>exacto</strong> de tributar en Andorra visualizado de forma gráfica y entretenida.</p>
         </div>
       </div>
     </section>
@@ -51,7 +51,7 @@
           <h1 class="title has-text-centered">🚨 Al lío</h1>
            <div class="container" style="max-width: 500px">
             <div class="box">
-              <form action="results.php" method="POST">
+              <form action="results.php" method="GET">
                 <div class="field">
                   <label class="label">Salario anual bruto</label>
                   <div class="control">
@@ -70,7 +70,7 @@
                   ?>              
                 </div>
                 <div class="control has-text-centered">
-                  <input class="button is-link is-outlined is-medium" type="submit" name="submit" value="Calcular">
+                  <input type="submit" class="button is-link is-outlined is-medium" name="submit" value="Calcular">
                 </div>       
               </form>
             </div>
@@ -85,7 +85,7 @@
           <strong>Andorra Simulator</strong> es un proyecto de <a href="https://mariofont.com" target="_blank">Mario Font</a>. ¿Sugerencias? Hablamos por <a href="https://twitter.com/mario_font" target="_blank">Twitter</a>.
         </p>
         <p class="is-italic">
-          Versión 0.3.0
+          Versión 0.4.0
         </p>
       </div>
     </footer>

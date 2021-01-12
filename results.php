@@ -40,7 +40,7 @@
     } 
     elseif ($salary >= 12450 AND $salary < 20200) // type2
     {
-      $type1 = 12449 * 0.19;
+      $type1 = 12450 * 0.19;
       $carryTax = ($salary - 12450) * 0.24;
 
       $net = $salary - ($type1 + $carryTax);
@@ -48,7 +48,7 @@
     } 
     elseif ($salary >= 20200 AND $salary < 35200) // type3
     {
-      $type1 = 12449 * 0.19;
+      $type1 = 12450 * 0.19;
       $type2 = 7750 * 0.24;
       $carryTax = ($salary - 20200) * 0.30;
 
@@ -56,7 +56,7 @@
     } 
     elseif ($salary >= 35200 AND $salary < 60000) // type4
     {
-      $type1 = 12449 * 0.19;
+      $type1 = 12450 * 0.19;
       $type2 = 7750 * 0.24;
       $type3 = 15000 * 0.30;
       $carryTax = ($salary - 35200) * 0.37;
@@ -65,7 +65,7 @@
     } 
     elseif ($salary >= 60000) // type5
     {
-      $type1 = 12449 * 0.19;
+      $type1 = 12450 * 0.19;
       $type2 = 7750 * 0.24;
       $type3 = 15000 * 0.30;
       $type4 = 24800 * 0.37;
@@ -85,7 +85,18 @@
     return $netDifference;
   }
 
+  // Comprobamos si se ha enviado el formulario 
+  if (isset($_GET['submit']) AND (!empty($_GET["salary"]))) { 
+    
+    $salary = $_GET['salary']; 
+
+    $netAndorra = netAndorra($salary);
+    $netEspaña = netEspaña($salary);
+    $netDifference = netDifference($netAndorra, $netEspaña);
+    $perDifference = ($netDifference / $netAndorra) * 100;
+
 ?>
+  
 
 <!DOCTYPE html>
 <html>
@@ -97,35 +108,73 @@
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   </head>
   <body>
-    <section class="container">
-      <h1 class="title is-1">Resultados</h1>
-      
-      <?php
-      // Comprobamos si se ha enviado el formulario 
-      if (isset($_POST['submit']) AND (!empty($_POST["salary"]))) { 
-        
-        $salary = $_POST['salary']; 
 
-        $netAndorra = netAndorra($salary);
-        $netEspaña = netEspaña($salary);
-        $netDifference = netDifference($netAndorra, $netEspaña);
-
-        echo 'Tu salario neto en Andorra es de ' . $netAndorra . ' €/año.';
-        echo 'Tu salario neto en España es de ' . $netEspaña . ' €/año.';
-        echo 'La diferencia es de ' . $netDifference . ' €/año.';
-        echo 'En 5 años la diferencia es de ' . $netDifference * 5 . ' €.';  
-        
-        exit; 
-
-      } 
-      elseif (empty($_POST["salary"])) 
-      {
-        header('Location: index.php');
-      } 
-      else header('Location: index.php');
-
-      ?>
-
+    <section class="hero is-medium is-warning is-bold has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1 is-spaced">
+            🎉 Resultados
+          </h1>
+          <h2 class="subtitle">
+            Salario anual bruto de <strong><?php echo number_format( $_GET['salary'], 0, ',', '.' ); ?></strong> €/año
+          </h2>
+        </div>
+      </div>
     </section>
+
+    <section class="section has-text-centered">
+      <div class="columns">
+        <div class="column">
+          <h2 class="title is-2">🇪🇸 España</h2>
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title"><?php echo number_format( $netEspaña, 2, ',', '.' ); ?> €/año</p>
+              <p class="subtitle">Salario anual <strong>neto</strong></p>
+            </article>
+          </div> 
+          
+        </div>
+        <div class="column">
+          <h2 class="title is-2">🇦🇩 Andorra</h2>
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title"><?php echo number_format( $netAndorra, 2, ',', '.' ); ?> €/año</p>
+              <p class="subtitle">Salario anual <strong>neto</strong></p>
+            </article>
+          </div>
+          
+        </div>
+      </div>
+      <div class="tile">
+        <article class="tile is-child notification is-sucess">
+          <p class="title">Te ahorrarías <?php echo number_format( $netDifference, 2, ',', '.' ); ?> € al año</p>
+          <p class="subtitle">Equivalente a un <strong><?php echo number_format( $perDifference, 2, ',', '.' ); ?></strong> % del salario</p>
+        </article>
+      </div> 
+    </section>
+    
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Andorra Simulator</strong> es un proyecto de <a href="https://mariofont.com" target="_blank">Mario Font</a>. ¿Sugerencias? Hablamos por <a href="https://twitter.com/mario_font" target="_blank">Twitter</a>.
+        </p>
+        <p class="is-italic">
+          Versión 0.4.0
+        </p>
+      </div>
+    </footer>
+    
   </body>
 </html>
+
+<?php
+
+}
+
+elseif (empty($_POST["salary"])) 
+  {
+    header('Location: index.php');
+  } 
+  else header('Location: index.php');
+
+?>
