@@ -16,7 +16,7 @@
             💸 Andorra Simulator <span class="tag is-warning">Alpha</span>
           </h1>
           <h2 class="subtitle">
-            Porqué decenas de YouTubers se están mudando a Andorra, en detalle
+            Entiende porqué decenas de YouTubers se están mudando a Andorra, en detalle
           </h2>
         </div>
       </div>
