@@ -85,15 +85,51 @@
     return $netDifference;
   }
 
+  function monthlyDifference($andorra, $spain)
+  {
+    $monthlyDifference = $andorra - $spain;
+
+    return $monthlyDifference;
+  }
+
+  function fiveDifference($andorra, $spain)
+  {
+    $fiveDifference = $andorra - $spain;
+
+    return $fiveDifference;
+  }
+
+  function quinceDifference($andorra, $spain)
+  {
+    $quinceDifference = $andorra - $spain;
+
+    return $quinceDifference;
+  }
+
   // Comprobamos si se ha enviado el formulario 
-  if (isset($_GET['submit']) AND (!empty($_GET["salary"]))) { 
+  if (isset($_GET['salary']) AND (!empty($_GET["salary"]))) { 
     
     $salary = $_GET['salary']; 
 
     $netAndorra = netAndorra($salary);
-    $netEspaña = netEspaña($salary);
+    $netEspaña = netEspaña($salary);  
     $netDifference = netDifference($netAndorra, $netEspaña);
     $perDifference = ($netDifference / $netAndorra) * 100;
+
+    $monthlyAndorra = $netAndorra / 12;
+    $monthlyEspaña = $netEspaña / 12;
+    $monthlyDifference = monthlyDifference($monthlyAndorra, $monthlyEspaña);
+    $perMonthlyDifference = ($monthlyDifference / $monthlyAndorra) * 100;
+
+    $fiveAndorra = $netAndorra * 5;
+    $fiveEspaña = $netEspaña * 5;
+    $fiveDifference = fiveDifference($fiveAndorra, $fiveEspaña);
+    $perFiveDifference = ($fiveDifference / $fiveAndorra) * 100;
+
+    $quinceAndorra = $netAndorra * 15;
+    $quinceEspaña = $netEspaña * 15;
+    $quinceDifference = quinceDifference($quinceAndorra, $quinceEspaña);
+    $perQuinceDifference = ($quinceDifference / $quinceAndorra) * 100;
 
 ?>
   
@@ -150,6 +186,102 @@
           <p class="title">Te ahorrarías <?php echo number_format( $netDifference, 2, ',', '.' ); ?> € al año</p>
           <p class="subtitle">Equivalente a un <strong><?php echo number_format( $perDifference, 2, ',', '.' ); ?></strong> % del salario</p>
         </article>
+      </div>
+    </section>
+
+    <h1 class="title has-text-centered">⬇️</h1> 
+
+    <section class="section has-text-centered">
+      <h1 class="title">¿Cuál sería la diferencia mensual?</h1>
+      <div class="columns">
+        <div class="column">
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title">🇪🇸 <?php echo number_format( $monthlyEspaña, 2, ',', '.' ); ?> €/mes</p>
+              <p class="subtitle">Salario mensual <strong>neto</strong></p>
+            </article>
+          </div> 
+          
+        </div>
+        <div class="column">
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title">🇦🇩 <?php echo number_format( $monthlyAndorra, 2, ',', '.' ); ?> €/mes</p>
+              <p class="subtitle">Salario mensual <strong>neto</strong></p>
+            </article>
+          </div>
+          
+        </div>
+      </div>
+      <div class="tile">
+        <article class="tile is-child notification is-sucess">
+          <p class="title">Te ahorrarías <?php echo number_format( $monthlyDifference, 2, ',', '.' ); ?> € al mes</p>
+          <p class="subtitle">Equivalente a un <strong><?php echo number_format( $perMonthlyDifference, 2, ',', '.' ); ?></strong> % del salario</p>
+        </article>
+      </div> 
+    </section>
+
+    <h1 class="title has-text-centered">⬇️</h1> 
+
+    <section class="section has-text-centered">
+      <h1 class="title">¿En 5 años?</h1>
+      <div class="columns">
+        <div class="column">
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title">🇪🇸 <?php echo number_format( $fiveEspaña, 2, ',', '.' ); ?> €</p>
+              <p class="subtitle">Salario <strong>acumulado</strong></p>
+            </article>
+          </div> 
+          
+        </div>
+        <div class="column">
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title">🇦🇩 <?php echo number_format( $fiveAndorra, 2, ',', '.' ); ?> €</p>
+              <p class="subtitle">Salario <strong>acumulado</strong></p>
+            </article>
+          </div>
+          
+        </div>
+      </div>
+      <div class="tile">
+        <article class="tile is-child notification is-sucess">
+          <p class="title">Te ahorrarías <?php echo number_format( $fiveDifference, 2, ',', '.' ); ?> € en total</p>
+          <p class="subtitle">Un <strong><?php echo number_format( $perFiveDifference, 2, ',', '.' ); ?></strong> % de todos los ingresos</p>
+        </article>
+      </div> 
+    </section>
+
+    <h1 class="title has-text-centered">⬇️</h1> 
+
+    <section class="section has-text-centered">
+      <h1 class="title">¿Y en 15 años?</h1>
+      <div class="columns">
+        <div class="column">
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title">🇪🇸 <?php echo number_format( $quinceEspaña, 2, ',', '.' ); ?> €</p>
+              <p class="subtitle">Salario <strong>acumulado</strong></p>
+            </article>
+          </div> 
+          
+        </div>
+        <div class="column">
+          <div class="tile">
+            <article class="tile is-child notification is-sucess">
+              <p class="title">🇦🇩 <?php echo number_format( $quinceAndorra, 2, ',', '.' ); ?> €</p>
+              <p class="subtitle">Salario <strong>acumulado</strong></p>
+            </article>
+          </div>
+          
+        </div>
+      </div>
+      <div class="tile">
+        <article class="tile is-child notification is-sucess">
+          <p class="title">Te ahorrarías <?php echo number_format( $quinceDifference, 2, ',', '.' ); ?> € en total</p>
+          <p class="subtitle">Un <strong><?php echo number_format( $perQuinceDifference, 2, ',', '.' ); ?></strong> % de todos los ingresos</p>
+        </article>
       </div> 
     </section>
     
@@ -159,7 +291,7 @@
           <strong>Andorra Simulator</strong> es un proyecto de <a href="https://mariofont.com" target="_blank">Mario Font</a>. ¿Sugerencias? Hablamos por <a href="https://twitter.com/mario_font" target="_blank">Twitter</a>.
         </p>
         <p class="is-italic">
-          Versión 0.4.0
+          Versión 0.5.0
         </p>
       </div>
     </footer>

@@ -51,28 +51,20 @@
           <h1 class="title has-text-centered">🚨 Al lío</h1>
            <div class="container" style="max-width: 500px">
             <div class="box">
+              
               <form action="results.php" method="GET">
                 <div class="field">
                   <label class="label">Salario anual bruto</label>
                   <div class="control">
                     <input class="input" type="text" name="salary" placeholder="30.000 €">
-                  </div>
-                  <?php
-                  if ($error) {
-                  ?>
-                  <p class="help is-danger">Debes introducir un salario.</p>                  
-                  <?php
-                  } else {
-                  ?>
-                    <p class="help">No seas fantasma ;)</p>
-                  <?php
-                  }
-                  ?>              
+                  </div>                  
+                  <p class="help">No seas fantasma ;)</p>
                 </div>
                 <div class="control has-text-centered">
-                  <input type="submit" class="button is-link is-outlined is-medium" name="submit" value="Calcular">
+                  <input type="submit" class="button is-link is-outlined is-medium" value="Calcular">
                 </div>       
               </form>
+
             </div>
           </div>
         </div>
