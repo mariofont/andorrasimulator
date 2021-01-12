@@ -102,10 +102,9 @@
       
       <?php
       // Comprobamos si se ha enviado el formulario 
-      if ( isset( $_POST['submit'] ) ) { 
+      if (isset($_POST['submit']) AND (!empty($_POST["salary"]))) { 
         
         $salary = $_POST['salary']; 
-        $age = $_POST['age'];
 
         $netAndorra = netAndorra($salary);
         $netEspaña = netEspaña($salary);
@@ -117,7 +116,13 @@
         echo 'En 5 años la diferencia es de ' . $netDifference * 5 . ' €.';  
         
         exit; 
-      }
+
+      } 
+      elseif (empty($_POST["salary"])) 
+      {
+        header('Location: index.php');
+      } 
+      else header('Location: index.php');
 
       ?>
 

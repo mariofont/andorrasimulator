@@ -16,51 +16,59 @@
             💸 Andorra Simulator <span class="tag is-warning">Alpha</span>
           </h1>
           <h2 class="subtitle">
-            Sí, esta web es verdadera, sigue leyendo...
+            Porqué decenas de YouTubers se están mudando a Andorra, en detalle
           </h2>
         </div>
       </div>
     </section>
     
     <section class="section has-text-centered">
-      <div class="container">
-        <h1 class="title is-spaced">
-          💡 La idea
+      <div class="columns">
+        <div class="column">
+          <h1 class="title is-spaced">
+          🎯 El objetivo
         </h1>
-        <p class="subtitle" style="margin-bottom: 3em">Averiguar de forma <strong>rápida y sencilla</strong> el ahorro de mudarnos a Andorra.</p>
-        <h1 class="title is-spaced">
-          📝 El proceso
+        <p class="subtitle">Averiguar de forma <strong>rápida, sencilla y visual</strong> las diferencias fiscales entre España y Andorra.</p>
+        </div>
+        <div class="column">
+          <h1 class="title is-spaced">
+          📝 Datos necesarios
         </h1>
-        <p class="subtitle" style="margin-bottom: 3em">Introducir <strong>3</strong> datos esenciales sobre nosotros (o quien queramos).</p>
-        <h1 class="title is-spaced">
+        <p class="subtitle">Sólamente es necesario el <strong>salario bruto anual</strong> para conocer los tramos correspondientes del IRFP.</p>
+        </div>
+        <div class="column">
+          <h1 class="title is-spaced">
           📊 Los resultados
         </h1>
-        <p class="subtitle">El ahorro <strong>exacto</strong> en € y % a corto y largo plazo.</p>
+        <p class="subtitle">El ahorro <strong>exacto</strong> de tributar en Andorra visualizado de forma gráfica y entretenida.</p>
+        </div>
       </div>
     </section>
 
     <section class="hero is-light">
       <div class="hero-body">
         <div class="container">
+          <h1 class="title has-text-centered">🚨 Al lío</h1>
            <div class="container" style="max-width: 500px">
             <div class="box">
               <form action="results.php" method="POST">
                 <div class="field">
-                  <label class="label">Ingresos anuales brutos</label>
+                  <label class="label">Salario anual bruto</label>
                   <div class="control">
                     <input class="input" type="text" name="salary" placeholder="30.000 €">
                   </div>
-                  <p class="help">No seas fantasma.</p>
+                  <?php
+                  if ($error) {
+                  ?>
+                  <p class="help is-danger">Debes introducir un salario.</p>                  
+                  <?php
+                  } else {
+                  ?>
+                    <p class="help">No seas fantasma ;)</p>
+                  <?php
+                  }
+                  ?>              
                 </div>
-
-                <div class="field">
-                  <label class="label">¿Te gusta la web?</label>
-                  <div class="control">
-                    <input class="input" type="text" name="age" placeholder="Sí">
-                  </div>
-                  <p class="help">Abuelos no.</p>
-                </div>
-
                 <div class="control has-text-centered">
                   <input class="button is-link is-outlined is-medium" type="submit" name="submit" value="Calcular">
                 </div>       
@@ -74,7 +82,10 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Andorra Simulator</strong> por <a href="https://mariofont.com">Mario Font</a>. Esta web está hecha con fines de entretenimiento.
+          <strong>Andorra Simulator</strong> es un proyecto de <a href="https://mariofont.com" target="_blank">Mario Font</a>. ¿Sugerencias? Hablamos por <a href="https://twitter.com/mario_font" target="_blank">Twitter</a>.
+        </p>
+        <p class="is-italic">
+          Versión 0.3.0
         </p>
       </div>
     </footer>
