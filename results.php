@@ -284,17 +284,21 @@
         </article>
       </div> 
     </section>
-    
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Andorra Simulator</strong> es un proyecto de <a href="https://mariofont.com" target="_blank">Mario Font</a>. ¿Sugerencias? Hablamos por <a href="https://twitter.com/mario_font" target="_blank">Twitter</a>.
-        </p>
-        <p class="is-italic">
-          Versión 0.5.0
-        </p>
+
+    <section class="hero is-medium is-dark is-bold has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            ¿Crees que merece la pena?
+          </h1>
+          <h2 class="subtitle">
+            Te ayudo con la respuesta: no
+          </h2>
+        </div>
       </div>
-    </footer>
+    </section>
+    
+    <?php include 'footer.php'; ?>
     
   </body>
 </html>

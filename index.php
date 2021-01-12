@@ -50,8 +50,7 @@
         <div class="container">
           <h1 class="title has-text-centered">🚨 Al lío</h1>
            <div class="container" style="max-width: 500px">
-            <div class="box">
-              
+            <div class="box">           
               <form action="results.php" method="GET">
                 <div class="field">
                   <label class="label">Salario anual bruto</label>
@@ -60,27 +59,20 @@
                   </div>                  
                   <p class="help">No seas fantasma ;)</p>
                 </div>
-                <div class="control has-text-centered">
-                  <input type="submit" class="button is-link is-outlined is-medium" value="Calcular">
-                </div>       
+                <div class="field">
+                  <div class="control has-text-centered">
+                    <input type="submit" class="button is-link is-outlined is-rounded" value="Calcular">
+                  </div>  
+                </div>   
               </form>
-
             </div>
+            <a class="button is-link is-light is-fullwidth" href="results.php?salary=<?php echo rand(500000, 2000000); ?>">¡Randomizar!</a>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Andorra Simulator</strong> es un proyecto de <a href="https://mariofont.com" target="_blank">Mario Font</a>. ¿Sugerencias? Hablamos por <a href="https://twitter.com/mario_font" target="_blank">Twitter</a>.
-        </p>
-        <p class="is-italic">
-          Versión 0.4.0
-        </p>
-      </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
   </body>
 </html>
