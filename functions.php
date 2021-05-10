@@ -106,4 +106,23 @@
     return $quinceDifference;
   }
 
+  function sentences($salary)
+  {
+    
+    $msg;
+
+    if ($salary < 500) {
+      $msg = "Poca diferencia pero ayudaría a gente en la calle";
+    } elseif ($salary < 1000) {
+      $msg = "Con ese dinero hay gente que paga su alquiler";
+    } elseif ($salary < 2000) {
+      $msg = "Estás dejando de pagar lo equivalente a un salario decente...";
+    } else
+      $msg = "Eres un sinverguenza";
+
+    return $msg;
+    
+  }
+
+
 ?>
