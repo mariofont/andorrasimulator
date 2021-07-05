@@ -35,7 +35,7 @@ require 'header.php';
     <section class="hero is-medium is-warning is-bold has-text-centered">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-1 is-spaced">
+          <h1 class="title is-1 is-spaced has-text-weight-bold">
             🎉 Resultados
           </h1>
           <h2 class="subtitle">
@@ -50,7 +50,7 @@ require 'header.php';
         <section class="section has-text-centered">
           <div class="columns">
             <div class="column">
-              <h2 class="title is-2">🇪🇸 España</h2>
+              <h2 class="title is-2 has-text-weight-bold">🇪🇸 España</h2>
               <div class="tile">
                 <article class="tile is-child notification is-sucess">
                   <p class="title has-text-danger-dark"><?php echo number_format( $netEspaña, 0, ',', '.' ); ?> €/año</p>
@@ -60,7 +60,7 @@ require 'header.php';
               
             </div>
             <div class="column">
-              <h2 class="title is-2">🇦🇩 Andorra</h2>
+              <h2 class="title is-2 has-text-weight-bold">🇦🇩 Andorra</h2>
               <div class="tile">
                 <article class="tile is-child notification is-sucess">
                   <p class="title has-text-success-dark"><?php echo number_format( $netAndorra, 0, ',', '.' ); ?> €/año</p>
@@ -78,7 +78,7 @@ require 'header.php';
         </section>
 
         <h1 class="title has-text-centered">⬇️</h1> 
-        <h1 class="title has-text-centered has-text-weight-normal">¿Cuál sería la diferencia mensual?</h1>
+        <h1 class="title has-text-centered has-text-weight-bold">¿Cuál sería la diferencia mensual?</h1>
         
         <section class="section has-text-centered"> 
           <div class="columns">
@@ -109,7 +109,7 @@ require 'header.php';
         </section>
 
         <h1 class="title has-text-centered">⬇️</h1> 
-        <h1 class="title has-text-centered has-text-weight-normal">¿En 5 años?</h1>
+        <h1 class="title has-text-centered has-text-weight-bold">¿En 5 años?</h1>
 
         <section class="section has-text-centered">       
           <div class="columns">
@@ -140,7 +140,7 @@ require 'header.php';
         </section>
 
         <h1 class="title has-text-centered">⬇️</h1> 
-        <h1 class="title has-text-centered has-text-weight-normal">¿Y en 15 años?</h1>
+        <h1 class="title has-text-centered has-text-weight-bold">¿Y en 15 años?</h1>
 
         <section class="section has-text-centered">  
           <div class="columns">
