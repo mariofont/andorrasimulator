@@ -56,7 +56,7 @@ require 'header.php';
                 </div>
                 <div class="field">
                   <div class="control has-text-centered">
-                    <input data-splitbee-event-type="Calculate" type="submit" class="button is-link is-outlined is-rounded" value="Calcular">
+                    <input type="submit" class="button is-link is-outlined is-rounded" value="Calcular">
                   </div>  
                 </div>   
               </form>
