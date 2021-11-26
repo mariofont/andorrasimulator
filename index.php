@@ -46,22 +46,22 @@ require 'header.php';
           <h1 class="title has-text-centered has-text-weight-bold">🚨 Al lío</h1>
            <div class="container" style="max-width: 500px">
             <div class="box">           
-              <form data-splitbee-event="Submit Salary Form" action="results.php" method="GET">
+              <form action="results.php" method="GET">
                 <div class="field">
                   <label class="label">Salario anual bruto</label>
                   <div class="control">
-                    <input class="input" type="text" name="salary" placeholder="30.000 €">
+                    <input data-splitbee-event="Submit Salary Form"class="input" type="text" name="salary" placeholder="30.000 €">
                   </div>                  
                   <p class="help">Prima la exactitud</p>
                 </div>
                 <div class="field">
                   <div class="control has-text-centered">
-                    <input type="submit" class="button is-link is-outlined is-rounded" value="Calcular">
+                    <input data-splitbee-event="Calculate Button" data-splitbee-event-type="Calculate" type="submit" class="button is-link is-outlined is-rounded" value="Calcular">
                   </div>  
                 </div>   
               </form>
             </div>
-            <a class="button is-link is-light is-fullwidth" href="results.php?salary=<?php echo rand(100000, 2000000); ?>">¡Randomizar!</a>
+            <a data-splitbee-event="Submit Random Salary Form" class="button is-link is-light is-fullwidth" href="results.php?salary=<?php echo rand(100000, 2000000); ?>">¡Randomizar!</a>
           </div>
         </div>
       </div>
