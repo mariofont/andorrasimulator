@@ -46,7 +46,7 @@ require 'header.php';
           <h1 class="title has-text-centered has-text-weight-bold">🚨 Al lío</h1>
            <div class="container" style="max-width: 500px">
             <div class="box">           
-              <form action="results.php" method="GET">
+              <form data-splitbee-event="Submit Salary Form" action="results.php" method="GET">
                 <div class="field">
                   <label class="label">Salario anual bruto</label>
                   <div class="control">
